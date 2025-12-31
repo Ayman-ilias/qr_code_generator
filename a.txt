@@ -1,0 +1,2 @@
+Device Eui : 1234
+App Key : 22

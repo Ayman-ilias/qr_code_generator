@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  qr-generator:
+    image: python:3.11-slim
+    container_name: qr-generator-app
+    working_dir: /app
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt && python app.py"
+    ports:
+      - "3997:5000"
+    volumes:
+      - ./:/app
+      - ./qr_history:/app/qr_history
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - qr-network
+
+networks:
+  qr-network:
+    driver: bridge
