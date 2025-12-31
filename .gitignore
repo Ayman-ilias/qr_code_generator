@@ -23,9 +23,14 @@ wheels/
 .installed.cfg
 *.egg
 
-# QR History (optional - remove this line if you want to track QR codes in git)
-qr_history/*.png
-qr_history/metadata.json
+# QR History Directory
+# This folder is auto-created by app.py when the application runs
+# It stores generated QR codes and metadata
+qr_history/
+
+# Temporary test files
+a.txt
+qr_code.png
 
 # IDE
 .vscode/
